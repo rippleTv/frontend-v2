@@ -20,6 +20,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
 `;
 
