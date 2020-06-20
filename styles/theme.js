@@ -1,5 +1,14 @@
 export default {
-	colors: {},
+	colors: {
+		white: '#FFFFFF',
+		orange: '#F9B109',
+		gray: {
+			500: '#E5E5E5',
+			100: '#3F3F3F',
+			200: '#858585',
+		},
+		black: '#000000',
+	},
 	fontSizes: {
 		xs: '0.75rem',
 		sm: '0.875rem',
@@ -12,4 +21,5 @@ export default {
 		'5xl': '3rem',
 		'6xl': '4rem',
 	},
+	maxWidth: '1280px',
 };
