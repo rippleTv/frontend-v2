@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Container } from '../components/lib';
 import Navbar from '../components/nav';
+import Footer from '../components/footer';
 import media from '../styles/media';
 
 const Hero = styled.section`
@@ -139,6 +140,8 @@ export default function Home() {
 					</Container>
 				</WatchNow>
 			</main>
+
+			<Footer />
 		</div>
 	);
 }
