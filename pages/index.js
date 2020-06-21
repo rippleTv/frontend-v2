@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { Container } from '../components/lib';
+import Navbar from '../components/nav';
 import media from '../styles/media';
 
 const Hero = styled.section`
 	background: linear-gradient(
 			to bottom,
-			rgba(0, 0, 0, 0.8),
-			rgba(0, 0, 0, 0.7) 80%,
-			rgba(0, 0, 0, 0.6) 100%
+			rgba(0, 0, 0, 0.7),
+			rgba(0, 0, 0, 0.5) 80%,
+			rgba(0, 0, 0, 0.3) 100%
 		),
-		url('/images/hero_group.jpg') no-repeat 0 20%;
+		url('/images/actors.png');
 	background-size: cover;
 	min-height: 100vh;
 `;
@@ -39,6 +40,7 @@ const HeroContainer = styled(Container)`
 `;
 
 const Button = styled.a`
+	cursor: pointer;
 	max-width: 274px;
 	width: 70%;
 	padding: 17px 0px;
@@ -46,17 +48,22 @@ const Button = styled.a`
 	border-radius: 10px;
 	${media.md`width: 100%;`}
 	background: ${(props) => props.theme.colors.orange};
+
+	&:hover{
+		background: rgba(249, 177, 9,0.8)
+	}
 `;
 
 export default function Home() {
 	return (
 		<div className='container'>
+			<Navbar />
 			<main>
 				<Hero>
 					<HeroContainer>
 						<h1>The best of Nollywood</h1>
 						<p>Thousands of Movies. Watch on any device</p>
-						<Button>Start Watching</Button>
+						<Button>START WATCHING</Button>
 					</HeroContainer>
 				</Hero>
 			</main>
