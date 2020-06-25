@@ -17,7 +17,9 @@ const Container = styled.div`
 
 const CustomLink = styled.a`
 	cursor: pointer;
-	max-width: 112px;
+	display: block;
+	max-width: ${({ width }) => (width ? width : '112px')};
+	width: ${({ width }) => (width ? width : '112px')};
 	padding: 5px 12px;
 	font-size: ${({ theme }) => theme.fontSizes.sm};
 	text-align: center;
@@ -34,9 +36,24 @@ const CustomLink = styled.a`
 const ButtonLink = ({ href, children, ...props }) => {
 	return (
 		<Link href={href} {...props}>
-			<CustomLink>{children}</CustomLink>
+			<CustomLink {...props}>{children}</CustomLink>
 		</Link>
 	);
 };
 
-export { Container, ButtonLink, CustomLink };
+const H1 = styled.h1`
+	font-size: 30px;
+	line-height: 62px;
+	margin-bottom: 13px;
+
+	${media.md`font-size: 40px;`}
+
+	${media.lg`font-size: 50px;`}
+`;
+
+const P = styled.p`
+	font-size: 18px;
+	width: ${({ width }) => (width ? width : 'auto')};
+`;
+
+export { Container, ButtonLink, CustomLink, H1, P };
