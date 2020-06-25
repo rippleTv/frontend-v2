@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from 'next/link';
 import theme from '../styles/theme';
 import media from '../styles/media';
 
@@ -6,6 +7,7 @@ const Container = styled.div`
 	padding: 100px 0;
 	width: 88%;
 	margin: 0 auto;
+	min-height: ${({ minHeight }) => (minHeight ? minHeight : 'auto')};
 	${media.lg`max-width: ${theme.maxWidth}`}
 
 	.fill-height {
@@ -13,7 +15,7 @@ const Container = styled.div`
 	}
 `;
 
-const ButtonLink = styled.a`
+const CustomLink = styled.a`
 	cursor: pointer;
 	max-width: 112px;
 	padding: 5px 12px;
@@ -29,4 +31,12 @@ const ButtonLink = styled.a`
 	}
 `;
 
-export { Container, ButtonLink };
+const ButtonLink = ({ href, children, ...props }) => {
+	return (
+		<Link href={href} {...props}>
+			<CustomLink>{children}</CustomLink>
+		</Link>
+	);
+};
+
+export { Container, ButtonLink, CustomLink };

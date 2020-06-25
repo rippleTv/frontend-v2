@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import Navbar from './nav';
 
-const Page = ({ title = '', description = '', children }) => {
+const Page = ({
+	title = '',
+	description = '',
+	children,
+	showNavButton = true,
+}) => {
 	return (
 		<div>
 			<Head>
@@ -12,7 +17,7 @@ const Page = ({ title = '', description = '', children }) => {
 				/>
 			</Head>
 			<main>
-				<Navbar />
+				<Navbar showNavButton={showNavButton} />
 				{children}
 			</main>
 		</div>

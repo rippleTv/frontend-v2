@@ -18,16 +18,18 @@ const Nav = styled.nav`
 	align-items: center;
 `;
 
-const Navbar = () => {
+const Navbar = ({ showNavButton }) => {
 	return (
 		<NavContainer>
 			<Nav>
 				<div className='logo'>
 					<Logo />
 				</div>
-				<Link href='/404' passHref>
-					<ButtonLink>LOG IN</ButtonLink>
-				</Link>
+				{showNavButton && (
+					<Link href='/signup' passHref>
+						<ButtonLink>signup</ButtonLink>
+					</Link>
+				)}
 			</Nav>
 		</NavContainer>
 	);
