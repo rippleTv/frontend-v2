@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import theme from '../styles/theme';
-import media from '../styles/media';
+import theme from '../../styles/theme';
+import media from '../../styles/media';
 
 const Container = styled.div`
 	padding: 100px 0;
@@ -18,13 +18,12 @@ const Container = styled.div`
 const CustomLink = styled.a`
 	cursor: pointer;
 	display: block;
-	max-width: ${({ width }) => (width ? width : '112px')};
-	width: ${({ width }) => (width ? width : '112px')};
-	padding: 5px 12px;
+	max-width: ${({ width }) => (width ? width : 'auto')};
+	padding:  ${({ huge }) => (huge ? '7px 20px' : '4px 8px')};
+	${media.md`padding:  ${({ huge }) => (huge ? '10px 20px' : '7px 20px')};`}
 	font-size: ${({ theme }) => theme.fontSizes.sm};
 	text-align: center;
 	border-radius: 10px;
-	${media.md`padding: 7px 20px;`};
 	border: 2px solid ${(props) => props.theme.colors.orange};
 
 	&:hover {
@@ -35,7 +34,7 @@ const CustomLink = styled.a`
 
 const ButtonLink = ({ href, children, ...props }) => {
 	return (
-		<Link href={href} {...props}>
+		<Link href={href} passHref {...props}>
 			<CustomLink {...props}>{children}</CustomLink>
 		</Link>
 	);

@@ -43,6 +43,7 @@ const StyledLogin = styled.section`
 
 const Form = styled.form`
 	max-width: 442px;
+	min-height: 60vh;
 	margin: auto;
 	padding: 70px 30px;
 	background: #fff;
@@ -52,6 +53,7 @@ const Form = styled.form`
 
 	p {
 		font-size: 12px;
+		text-align: center;
 
 		a {
 			text-decoration: underline;
@@ -112,7 +114,7 @@ const Button = styled.a`
 
 export default function Login({}) {
 	return (
-		<Page title='Rippletv' showNavButton={false}>
+		<Page title='Rippletv - LOGIN' showNavButton={false}>
 			<StyledLogin>
 				<Container className='container'>
 					<div className='info'>
@@ -125,10 +127,6 @@ export default function Login({}) {
 					<div className='info'>
 						<Form>
 							<InputGroup>
-								<Input placeholder='Name' type='text' />
-								<Span />
-							</InputGroup>
-							<InputGroup>
 								<Input placeholder='Email' type='email' />
 								<Span />
 							</InputGroup>
@@ -136,14 +134,11 @@ export default function Login({}) {
 								<Input placeholder='Password' type='password' />
 								<Span />
 							</InputGroup>
-							<InputGroup>
-								<Input placeholder='Confirm Password' type='password' />
-								<Span />
-							</InputGroup>
+
 							<p>
-								By signing up, you agree to our <a>Terms & Conditions</a>
+								<a>Forgot Password?</a>
 							</p>
-							<Button>SIGN UP</Button>
+							<Button>LOG IN</Button>
 						</Form>
 					</div>
 				</Container>

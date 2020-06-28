@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import Logo from '../icons/logo';
-import { ButtonLink } from './lib';
+import { ButtonLink } from './lib/common';
 
 const NavContainer = styled.header`
 	padding: 0 6%;
@@ -27,7 +27,7 @@ const Navbar = ({ showNavButton }) => {
 				</div>
 				{showNavButton && (
 					<Link href='/signup' passHref>
-						<ButtonLink>signup</ButtonLink>
+						<ButtonLink>LOG IN</ButtonLink>
 					</Link>
 				)}
 			</Nav>
