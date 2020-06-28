@@ -58,28 +58,36 @@ const Form = styled.form`
 		}
 	}
 `;
+const Span = styled.span`
+	display: block;
+	width: 0%;
+	height: 2px;
+	background: #000;
+	position: relative;
+	top: -1px;
+	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+`;
 
 const Input = styled.input`
 	width: 100%;
 	border: 0;
-	display: block;
-	outline: 0;
-	position: relative;
+	outline: none;
 	border-bottom: 1px solid #969292;
 	color: #000;
 	font-size: 14px;
-	margin-bottom: 30px;
 	padding: 10px 0;
-	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-	&&:hover,
-	&&:active,
-	&&:focus {
-		border-bottom-color: #000;
+	&:focus + ${Span}, &:active + ${Span} {
+		width: 100%;
 	}
+
 	&::placeholder {
 		color: #969292;
 	}
+`;
+
+const InputGroup = styled.div`
+	margin-bottom: 30px;
 `;
 
 const Button = styled.a`
@@ -116,10 +124,22 @@ export default function Login({}) {
 					</div>
 					<div className='info'>
 						<Form>
-							<Input placeholder='Name' type='text' />
-							<Input placeholder='Email' type='email' />
-							<Input placeholder='password' type='password' />
-							<Input placeholder='Confirm password' type='password' />
+							<InputGroup>
+								<Input placeholder='Name' type='text' />
+								<Span />
+							</InputGroup>
+							<InputGroup>
+								<Input placeholder='Email' type='email' />
+								<Span />
+							</InputGroup>
+							<InputGroup>
+								<Input placeholder='Password' type='password' />
+								<Span />
+							</InputGroup>
+							<InputGroup>
+								<Input placeholder='Confirm Password' type='password' />
+								<Span />
+							</InputGroup>
 							<p>
 								By signing up, you agree to our <a>Terms & Conditions</a>
 							</p>
