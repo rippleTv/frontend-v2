@@ -32,6 +32,14 @@ const GlobalStyle = createGlobalStyle`
     ${media.md`font-size: ${theme.fontSizes['5xl']}`}
     ${media.lg`font-size: ${theme.fontSizes['6xl']}`}
   }
+
+  a {
+    cursor: pointer;
+  }
+
+  .text-center {
+    text-align: center;
+  }
 `;
 
 export default GlobalStyle;

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import Page from '../components/page';
-import { Container, ButtonLink, H1, P } from '../components/lib/common';
+import { Container, ButtonLink, H1, P, Form, Input } from '../components/lib';
 import media from '../styles/media';
 
 const StyledLogin = styled.section`
@@ -41,57 +41,6 @@ const StyledLogin = styled.section`
 	}
 `;
 
-const Form = styled.form`
-	max-width: 442px;
-	min-height: 60vh;
-	margin: auto;
-	padding: 70px 30px;
-	background: #fff;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
-	color: #000;
-	${media.md`border-radius: 10px; padding: 70px 53px`}
-
-	p {
-		font-size: 12px;
-		text-align: center;
-
-		a {
-			text-decoration: underline;
-		}
-	}
-`;
-const Span = styled.span`
-	display: block;
-	width: 0%;
-	height: 2px;
-	background: #000;
-	position: relative;
-	top: -1px;
-	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-`;
-
-const Input = styled.input`
-	width: 100%;
-	border: 0;
-	outline: none;
-	border-bottom: 1px solid #969292;
-	color: #000;
-	font-size: 14px;
-	padding: 10px 0;
-
-	&:focus + ${Span}, &:active + ${Span} {
-		width: 100%;
-	}
-
-	&::placeholder {
-		color: #969292;
-	}
-`;
-
-const InputGroup = styled.div`
-	margin-bottom: 30px;
-`;
-
 const Button = styled.a`
 	display: block;
 	cursor: pointer;
@@ -120,22 +69,15 @@ export default function Login({}) {
 					<div className='info'>
 						<H1>Watch Great Nollywood movies</H1>
 						<P>Thousands of Movies. Watch on any device</P>
-						<ButtonLink href='/login' width='188px' huge>
-							LOG IN
+						<ButtonLink href='/signup' width='188px' huge>
+							SIGN UP
 						</ButtonLink>
 					</div>
 					<div className='info'>
 						<Form>
-							<InputGroup>
-								<Input placeholder='Email' type='email' />
-								<Span />
-							</InputGroup>
-							<InputGroup>
-								<Input placeholder='Password' type='password' />
-								<Span />
-							</InputGroup>
-
-							<p>
+							<Input placeholder='Email' type='email' />
+							<Input placeholder='Password' type='password' />
+							<p className='text-center'>
 								<a>Forgot Password?</a>
 							</p>
 							<Button>LOG IN</Button>

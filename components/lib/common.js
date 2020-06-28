@@ -55,4 +55,22 @@ const P = styled.p`
 	width: ${({ width }) => (width ? width : 'auto')};
 `;
 
-export { Container, ButtonLink, CustomLink, H1, P };
+const Form = styled.form`
+	max-width: 442px;
+	margin: auto;
+	padding: 70px 30px;
+	background: #fff;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+	color: #000;
+	${media.md`border-radius: 10px; padding: 70px 53px`}
+
+	p {
+		font-size: 12px;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+`;
+
+export { Container, ButtonLink, CustomLink, H1, P, Form };

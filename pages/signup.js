@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import Page from '../components/page';
-import { Container, ButtonLink, H1, P } from '../components/lib/common';
+import { Container, ButtonLink, H1, P, Form, Input } from '../components/lib';
 import media from '../styles/media';
 
 const StyledLogin = styled.section`
@@ -41,55 +41,6 @@ const StyledLogin = styled.section`
 	}
 `;
 
-const Form = styled.form`
-	max-width: 442px;
-	margin: auto;
-	padding: 70px 30px;
-	background: #fff;
-	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
-	color: #000;
-	${media.md`border-radius: 10px; padding: 70px 53px`}
-
-	p {
-		font-size: 12px;
-
-		a {
-			text-decoration: underline;
-		}
-	}
-`;
-const Span = styled.span`
-	display: block;
-	width: 0%;
-	height: 2px;
-	background: #000;
-	position: relative;
-	top: -1px;
-	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-`;
-
-const Input = styled.input`
-	width: 100%;
-	border: 0;
-	outline: none;
-	border-bottom: 1px solid #969292;
-	color: #000;
-	font-size: 14px;
-	padding: 10px 0;
-
-	&:focus + ${Span}, &:active + ${Span} {
-		width: 100%;
-	}
-
-	&::placeholder {
-		color: #969292;
-	}
-`;
-
-const InputGroup = styled.div`
-	margin-bottom: 30px;
-`;
-
 const Button = styled.a`
 	display: block;
 	cursor: pointer;
@@ -124,22 +75,10 @@ export default function Login({}) {
 					</div>
 					<div className='info'>
 						<Form>
-							<InputGroup>
-								<Input placeholder='Name' type='text' />
-								<Span />
-							</InputGroup>
-							<InputGroup>
-								<Input placeholder='Email' type='email' />
-								<Span />
-							</InputGroup>
-							<InputGroup>
-								<Input placeholder='Password' type='password' />
-								<Span />
-							</InputGroup>
-							<InputGroup>
-								<Input placeholder='Confirm Password' type='password' />
-								<Span />
-							</InputGroup>
+							<Input placeholder='Name' type='text' />
+							<Input placeholder='Email' type='email' />
+							<Input placeholder='Password' type='password' />
+							<Input placeholder='Confirm Password' type='password' />
 							<p>
 								By signing up, you agree to our <a>Terms & Conditions</a>
 							</p>
